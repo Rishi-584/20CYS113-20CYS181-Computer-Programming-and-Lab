@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    struct complex{
+        double real;
+        double img;
+    }a,b,c;
+
+    printf("Enter real and imaginary part of num1: \n");
+    scanf("%lf %lf",&a.real,&a.img);
+    printf("Enter real and imaginary part of num2: \n");
+    scanf("%lf %lf",&b.real,&b.img);
+
+    c.real = (a.real * b.real)-(a.img * b.img);
+    c.img = (a.real * b.img) + (b.real * a.img);
+
+    if(c.img > 0){
+        printf("%.2lf+%.2lfi",c.real,c.img);
+    }
+    else if(c.img == 0){
+        printf("%.2lf",c.real);
+    }
+    else{
+        c.img = -1 * c.img;
+        printf("%.2lf-%.2lfi",c.real,c.img);
+    }
+
+    return 0;
+}
